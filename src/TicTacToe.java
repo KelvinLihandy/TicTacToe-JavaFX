@@ -1,5 +1,3 @@
-import javafx.geometry.HPos;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -9,30 +7,41 @@ import javafx.stage.Stage;
 
 public class TicTacToe {
 	
-	private static final int row = 3;
-	private static final int column = 3;
-	protected Stage stage;
-	protected Scene scene;
-	protected BorderPane borderPane;
-	protected GridPane gridPane;
-	protected Button[][] buttons = new Button[row][column];
-	protected Label currentPlayer;
-	protected Label[] titles = new Label[3];
-	protected Style styling = new Style();
-	protected Event event = new Event();
+	static final int row = 3;
+	static final int column = 3;
+	Stage stage;
+	Scene scene;
+	BorderPane borderPane;
+	GridPane gridPane;
+	Button[][] buttons = new Button[row+1][column];
+	Label currentPlayer;
+	Label[] titles = new Label[3];
+	Style styling = new Style();
+	Event event = new Event();
+	String[] playerLetters = {"X", "O"};
+	String currentLetter;
+	int[] moveList = {0};
 	
 	public TicTacToe(Stage stage) {
 		stage = new Stage();
 		this.stage = stage;
 		stage.setTitle("TTT");
+		randomPlayer();
 		initialize();
 		styling.style(borderPane, gridPane, titles, buttons, currentPlayer);
-		event.eventTrigger(buttons, row, column);
+		event.eventTrigger(buttons, row, column, playerLetters, currentPlayer, moveList);
 		this.scene = new Scene(borderPane, 600, 600);
 	}
 	
 	public Scene getScene() {
 		return this.scene;
+	}
+	
+	public void randomPlayer() {
+		int random = (int) ((Math.random()*100) + 1);
+		if(random > 50) {
+			moveList[0]++;
+		}
 	}
 	
 	public void initialize() {
@@ -51,6 +60,7 @@ public class TicTacToe {
 		buttons[2][0] = new Button("7");
 		buttons[2][1] = new Button("8");
 		buttons[2][2] = new Button("9");
-		currentPlayer = new Label("Current Player = null");
+		buttons[3][0] = new Button("RESET");
+		currentPlayer = new Label("Current Player = " + playerLetters[moveList[0] % 2]);
 	}
 }

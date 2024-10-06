@@ -20,7 +20,8 @@ public class Style {
 		gridPane.add(buttons[2][0], 0, 3);
 		gridPane.add(buttons[2][1], 1, 3);
 		gridPane.add(buttons[2][2], 2, 3);
-		gridPane.add(currentPlayer, 0, 4, 3, 1);
+		gridPane.add(buttons[3][0], 1, 4);
+		gridPane.add(currentPlayer, 0, 5, 3, 1);
 		gridPane.setHgap(10);
 		gridPane.setVgap(10);
 		titles[0].setStyle("-fx-font-size: 30px");
@@ -29,39 +30,44 @@ public class Style {
 		buttons[0][0].setStyle(
 				"-fx-font-size: 20px;"
 				+ "-fx-min-width: 100px;"
-				+ "-fx-min-height:100px");
+				+ "-fx-min-height: 100px;");
 		buttons[0][1].setStyle(
 				"-fx-font-size: 20px;"
 				+ "-fx-min-width: 100px;"
-				+ "-fx-min-height:100px");
+				+ "-fx-min-height: 100px;");
 		buttons[0][2].setStyle(
 				"-fx-font-size: 20px;"
 				+ "-fx-min-width: 100px;"
-				+ "-fx-min-height:100px");
+				+ "-fx-min-height:100px;");
 		buttons[1][0].setStyle(
 				"-fx-font-size: 20px;"
 				+ "-fx-min-width: 100px;"
-				+ "-fx-min-height:100px");
+				+ "-fx-min-height: 100px;");
 		buttons[1][1].setStyle(
 				"-fx-font-size: 20px;"
 				+ "-fx-min-width: 100px;"
-				+ "-fx-min-height:100px");
+				+ "-fx-min-height: 100px;");
 		buttons[1][2].setStyle(
 				"-fx-font-size: 20px;"
 				+ "-fx-min-width: 100px;"
-				+ "-fx-min-height:100px");
+				+ "-fx-min-height: 100px;");
 		buttons[2][0].setStyle(
 				"-fx-font-size: 20px;"
 				+ "-fx-min-width: 100px;"
-				+ "-fx-min-height:100px");
+				+ "-fx-min-height: 100px;");
 		buttons[2][1].setStyle(
 				"-fx-font-size: 20px;"
 				+ "-fx-min-width: 100px;"
-				+ "-fx-min-height:100px");
+				+ "-fx-min-height: 100px;");
 		buttons[2][2].setStyle(
 				"-fx-font-size: 20px;"
 				+ "-fx-min-width: 100px;"
-				+ "-fx-min-height:100px");
+				+ "-fx-min-height: 100px;");
+		buttons[3][0].setStyle(
+				"-fx-font-size: 20px;"
+				+ "-fx-min-width: 100px;"
+				+ "-fx-min-height: 40px;"
+				+ "-fx-base: red;");
 		currentPlayer.setStyle(
 				"-fx-font-size: 25px;");
 		GridPane.setHalignment(titles[0], HPos.CENTER);
